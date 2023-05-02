@@ -16,7 +16,7 @@ export default {
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "cupcake",
+    darkTheme: "winter",
   },
 }
 
