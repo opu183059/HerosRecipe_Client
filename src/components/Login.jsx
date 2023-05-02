@@ -3,7 +3,7 @@ import { Authcontect } from "../providers/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { signIn, signGoogle } = useContext(Authcontect);
+  const { signIn, signGoogle, signGithub } = useContext(Authcontect);
   // console.log(user);
 
   const handleLogin = (event) => {
@@ -25,6 +25,16 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     signGoogle()
+      .then((result) => {
+        const loggeduser = result.user;
+        console.log(loggeduser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const handleGitLogin = () => {
+    signGithub()
       .then((result) => {
         const loggeduser = result.user;
         console.log(loggeduser);
@@ -84,7 +94,7 @@ const Login = () => {
                     Google Login
                   </button>
                   <button
-                    onClick={handleGoogleLogin}
+                    onClick={handleGitLogin}
                     className="btn bg-white text-black hover:text-white hover:bg-lime-700 rounded-md shadow-md w-auto border-green-600 hover:border-green-600"
                   >
                     GitHub Login
