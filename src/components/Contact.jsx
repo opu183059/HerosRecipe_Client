@@ -1,0 +1,48 @@
+import React from "react";
+
+const Contact = () => {
+  return (
+    <div className="bg-[url('https://media.cnn.com/api/v1/images/stellar/prod/130614114257-malaysia-food.jpg?q=x_0,y_0,h_675,w_1200,c_crop/h_720,w_1280')] bg-cover bg-fixed bg-blend-darken">
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="card w-10/12 md:w-6/12 shadow-2xl bg-base-100">
+          <div className="card-body">
+            <h1 className="text-base md:text-lg items-center flex justify-center font-semibold mb-5">
+              contact with
+              <span className="text-3xl md:text-5xl text-amber-500 font-akaya ms-2">
+                SULTANs recipe
+              </span>
+            </h1>
+            <div className="form-control">
+              <input
+                type="text"
+                placeholder="name"
+                className="input input-bordered my-3"
+              />
+
+              <input
+                type="text"
+                placeholder="email"
+                className="input input-bordered my-3"
+              />
+            </div>
+            <div className="form-control">
+              <textarea
+                rows="4"
+                type="text"
+                placeholder="message"
+                className="border-solid border-2 rounded-lg p-4 input-bordered"
+              ></textarea>
+            </div>
+            <div className="form-control mt-6">
+              <button className="px-5 py-2 w-auto font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

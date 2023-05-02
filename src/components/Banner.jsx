@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover">
+    <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover bg-fixed">
       <div className="hero-content text-center">
         <div className=" max-w-screen-lg">
           <h1 className="text-2xl  text-stone-400 font-akaya">welcome to</h1>

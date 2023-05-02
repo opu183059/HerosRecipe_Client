@@ -3,9 +3,9 @@ import React from "react";
 const Galary = () => {
   return (
     <div className="w-11/12 mx-auto my-4 md:my-14">
-      <h1 className="text-lg items-center flex justify-center font-semibold mb-5">
+      <h1 className="text-base md:text-lg items-center flex justify-center font-semibold mb-5">
         special from
-        <span className="text-5xl text-amber-500 font-akaya ms-2">
+        <span className="text-3xl md:text-5xl text-amber-500 font-akaya ms-2">
           SULTANs recipe
         </span>
       </h1>

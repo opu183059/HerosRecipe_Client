@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
 import Banner from "./Banner";
 import Galary from "./Galary";
+import Contact from "./Contact";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -16,6 +17,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Galary></Galary>
+      <Contact></Contact>
     </div>
   );
 };
