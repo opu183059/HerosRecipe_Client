@@ -33,7 +33,7 @@ const Header = () => {
           </Link>
           {user ? (
             <div className="flex flex-col md:text-center md:flex-row items-center">
-              <span className="mx-2">{user.email}</span>
+              {/* <span className="mx-2">{user.email}</span> */}
               <div
                 className="tooltip tooltip-bottom"
                 data-tip={user.displayName}

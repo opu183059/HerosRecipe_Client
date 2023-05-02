@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   const { user, createUser } = useContext(Authcontect);
-  const [error, setError] = useState("");
+  const [errormgs, setErrormgs] = useState("");
   // console.log(createUser);
 
   const handleRegister = (event) => {
@@ -23,7 +23,7 @@ const Register = () => {
         form.reset();
       })
       .catch((error) => {
-        setError(error.message);
+        setErrormgs(error.message);
       });
     /////////////////////////////////////////////////////////
     // const auth = getAuth();
@@ -82,7 +82,7 @@ const Register = () => {
                 />
               </div>
               <div className="errorMessage">
-                <p className="text-red-500">{error}</p>
+                <p className="text-red-500">{errormgs}</p>
               </div>
 
               <div className="form-control mt-4">
