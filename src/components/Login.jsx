@@ -38,8 +38,12 @@ const Login = () => {
       <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Please Login</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h1 className="text-2xl font-bold text-amber-500">
+              Please <span className="font-akaya text-5xl">Login</span>
+            </h1>
+            <p className="text-stone-300">
+              to get access our special features.
+            </p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
@@ -65,13 +69,21 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
+                <div className="socialLogin mb-2 flex justify-between">
+                  <button
+                    onClick={handleGoogleLogin}
+                    className="btn btn-primary w-auto mt-3"
+                  >
+                    Google Login
+                  </button>
+                  <button
+                    onClick={handleGoogleLogin}
+                    className="btn btn-primary w-auto mt-3"
+                  >
+                    GitHub Login
+                  </button>
+                </div>
                 <button className="btn btn-primary">Login</button>
-                <button
-                  onClick={handleGoogleLogin}
-                  className="btn btn-primary w-auto mt-3"
-                >
-                  Google Login
-                </button>
               </div>
             </form>
           </div>
