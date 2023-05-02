@@ -34,13 +34,12 @@ const Header = () => {
           {user ? (
             <div className="flex flex-col md:text-center md:flex-row items-center">
               <span className="mx-2">{user.email}</span>
-              <div className="tooltip tooltip-bottom" data-tip="user name">
-                <button className="">
-                  <img
-                    className="w-10 rounded-full mx-2 mt-2"
-                    src="https://i.ibb.co/JHVvZ07/am-a-19-year-old-multimedia-artist-student-from-manila-21.png"
-                    alt="person pic"
-                  />
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user.displayName}
+              >
+                <button className="flex items-center">
+                  <img className="w-10 rounded-full mx-2" src={user.photoURL} />
                 </button>
               </div>
               <button

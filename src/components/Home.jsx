@@ -8,7 +8,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-  console.log(data);
+  // console.log(data);
   const user = useContext(Authcontect);
   return (
     <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover">

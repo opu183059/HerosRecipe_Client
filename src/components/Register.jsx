@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
+// import { getAuth, updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { user, createUser } = useContext(Authcontect);
@@ -23,6 +25,17 @@ const Register = () => {
       .catch((error) => {
         setError(error.message);
       });
+    /////////////////////////////////////////////////////////
+    // const auth = getAuth();
+    // updateProfile(auth.currentUser, {
+    //   displayName: { name },
+    //   photoURL: photo,
+    // })
+    //   .then(() => {})
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    ////////////////////////////////////////////////////////
   };
   return (
     <div>
@@ -71,11 +84,21 @@ const Register = () => {
               <div className="errorMessage">
                 <p className="text-red-500">{error}</p>
               </div>
-              <div className="form-control mt-6">
+
+              <div className="form-control mt-4">
                 <button className="px-6 py-3 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-l from-amber-600 to-amber-500 hover:bg-gradient-to-r">
                   Register
                 </button>
               </div>
+              <p>
+                Already have an account?{" "}
+                <Link
+                  to="/login"
+                  className=" text-lg font-semibold text-blue-700"
+                >
+                  login
+                </Link>{" "}
+              </p>
             </form>
           </div>
         </div>
