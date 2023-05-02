@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useRouteError } from "react-router-dom";
 
 const Erroorpage = () => {
-  const { error, status } = useRouteError();
+  const { error } = useRouteError();
   return (
     <div>
       <section className="flex items-center h-screen p-16">

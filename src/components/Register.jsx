@@ -1,17 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
 
 const Register = () => {
   const { user, createUser } = useContext(Authcontect);
+  const [error, setError] = useState("");
   // console.log(createUser);
 
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log(name, email, password);
+    console.log(name, photo, email, password);
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
@@ -19,7 +21,7 @@ const Register = () => {
         form.reset();
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
   return (
@@ -65,6 +67,9 @@ const Register = () => {
                   className="input input-bordered"
                   required
                 />
+              </div>
+              <div className="errorMessage">
+                <p className="text-red-500">{error}</p>
               </div>
               <div className="form-control mt-6">
                 <button className="px-6 py-3 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-l from-amber-600 to-amber-500 hover:bg-gradient-to-r">
