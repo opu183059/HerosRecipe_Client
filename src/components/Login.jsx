@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Authcontect } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { signIn, signGoogle } = useContext(Authcontect);
@@ -63,27 +64,35 @@ const Login = () => {
                   className="input input-bordered"
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
+                  <p>
+                    Dont have account?{" "}
+                    <Link
+                      to="/register"
+                      className=" text-lg font-semibold text-blue-700"
+                    >
+                      Register
+                    </Link>{" "}
+                  </p>
                 </label>
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control mt-3">
                 <div className="socialLogin mb-2 flex justify-between">
                   <button
                     onClick={handleGoogleLogin}
-                    className="btn btn-primary w-auto mt-3"
+                    className="btn bg-white text-black hover:text-white hover:bg-sky-600 rounded-md shadow-md w-auto border-sky-600 hover:border-sky-600"
                   >
                     Google Login
                   </button>
                   <button
                     onClick={handleGoogleLogin}
-                    className="btn btn-primary w-auto mt-3"
+                    className="btn bg-white text-black hover:text-white hover:bg-lime-700 rounded-md shadow-md w-auto border-green-600 hover:border-green-600"
                   >
                     GitHub Login
                   </button>
                 </div>
-                <button className="btn btn-primary">Login</button>
+                <button className="px-6 py-3 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-l from-amber-600 to-amber-500 hover:bg-gradient-to-r">
+                  Login
+                </button>
               </div>
             </form>
           </div>

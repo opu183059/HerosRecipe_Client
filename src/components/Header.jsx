@@ -13,7 +13,7 @@ const Header = () => {
   };
   return (
     <div>
-      <nav className="w-10/12 mx-auto flex flex-col lg:flex-row justify-between my-4 items-center">
+      <nav className="w-10/12 mx-auto flex flex-col lg:flex-row justify-between my-3 items-center">
         <div className="logo mb-3 lg:mb-0">
           <Link to="/">
             <div className="pageTitle flex items-end">
@@ -37,14 +37,14 @@ const Header = () => {
               <div className="tooltip tooltip-bottom" data-tip="user name">
                 <button className="">
                   <img
-                    className="w-10 rounded-full mx-2"
+                    className="w-10 rounded-full mx-2 mt-2"
                     src="https://i.ibb.co/JHVvZ07/am-a-19-year-old-multimedia-artist-student-from-manila-21.png"
                     alt="person pic"
                   />
                 </button>
               </div>
               <button
-                className="px-6 py-3 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l"
+                className="px-5 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l"
                 onClick={handleLogOut}
               >
                 Log Out
@@ -52,7 +52,7 @@ const Header = () => {
             </div>
           ) : (
             <span>
-              <button className="px-6 py-3 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
+              <button className="px-5 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
                 <Link to="/login">Log in</Link>
               </button>
             </span>
