@@ -24,11 +24,13 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Please Register</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-stone-300">Welcome to our page</p>
+            <h1 className="text-2xl font-bold text-amber-500">
+              Please <span className="font-akaya text-5xl">Register</span>
+            </h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleRegister} className="card-body">
@@ -38,12 +40,21 @@ const Register = () => {
                   name="name"
                   placeholder="Name"
                   className="input input-bordered mb-2"
+                  required
+                />
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Photo URL"
+                  className="input input-bordered mb-2"
+                  required
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="email"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -52,10 +63,13 @@ const Register = () => {
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="px-6 py-3 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-l from-amber-600 to-amber-500 hover:bg-gradient-to-r">
+                  Register
+                </button>
               </div>
             </form>
           </div>
