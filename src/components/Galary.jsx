@@ -2,10 +2,10 @@ import React from "react";
 
 const Galary = () => {
   return (
-    <div className="w-11/12 mx-auto my-4 md:my-14">
+    <div className="p-4 md:p-14 bg-base-100">
       <h1 className="text-base md:text-lg items-center flex justify-center font-semibold mb-5">
         special from
-        <span className="text-3xl md:text-5xl text-amber-500 font-akaya ms-2">
+        <span className="text-3xl md:text-5xl text-amber-600 font-akaya ms-2">
           SULTANs recipe
         </span>
       </h1>

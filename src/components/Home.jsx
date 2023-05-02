@@ -12,7 +12,17 @@ const Home = () => {
       .then((data) => setData(data));
   }, []);
   // console.log(data);
-  const user = useContext(Authcontect);
+  const { user } = useContext(Authcontect);
+
+  if (user !== null) {
+    const displayName = user.displayName;
+    const email = user.email;
+    const photoURL = user.photoURL;
+    const emailVerified = user.emailVerified;
+    const uid = user.uid;
+    // console.log(displayName, email, photoURL, uid);
+  }
+
   return (
     <div>
       <Banner></Banner>

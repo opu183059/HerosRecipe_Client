@@ -37,7 +37,7 @@ const Login = () => {
     signGithub()
       .then((result) => {
         const loggeduser = result.user;
-        console.log(loggeduser);
+        // console.log(loggeduser);
       })
       .catch((error) => {
         console.log(error);
@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover">
+      <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover bg-fixed">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-2xl font-bold text-amber-500">
@@ -95,7 +95,7 @@ const Login = () => {
                   </button>
                   <button
                     onClick={handleGitLogin}
-                    className="btn bg-white text-black hover:text-white hover:bg-lime-700 rounded-md shadow-md w-auto border-green-600 hover:border-green-600"
+                    className="btn bg-white text-black hover:text-white hover:bg-lime-950 rounded-md shadow-md w-auto border-green-600 hover:border-green-600"
                   >
                     GitHub Login
                   </button>

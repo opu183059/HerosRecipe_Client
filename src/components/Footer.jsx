@@ -5,8 +5,7 @@ const Footer = () => {
     <div>
       <footer className="bg-gray-900 text-amber-600">
         <div className="w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:px-8 px-5 py-16">
-          <div className="col-span-3">
-            <h1 className="mb-1 font-semibold">SULTANs recipe</h1>
+          <div className="col-span-4">
             <p className="text-gray-400 text-sm mb-3">
               Cooking is an art, and we are here to help you create your
               masterpiece. Follow us on social media for more recipe ideas and
@@ -15,19 +14,15 @@ const Footer = () => {
               what you think of our recipes - we love hearing from our readers.
             </p>
             <p className="text-gray-400 text-sm">
-              At <span className="text-amber-600">SULTANs recipe</span>, we're
-              passionate about good food and great cooking. Whether you're a
-              seasoned chef or a kitchen newbie, we've got something for
-              everyone. Thanks for being a part of our community!
+              At{" "}
+              <span className="text-amber-600 font-akaya text-base">
+                SULTANs recipe
+              </span>
+              , we're passionate about good food and great cooking. Whether
+              you're a seasoned chef or a kitchen newbie, we've got something
+              for everyone. Thanks for being a part of our community!
             </p>
           </div>
-          <ul>
-            <h1 className="mb-1 font-semibold">About</h1>
-            <p className="text-gray-400 text-sm mb-3">Help Desk</p>
-            <p className="text-gray-400 text-sm mb-3">Sales</p>
-            <p className="text-gray-400 text-sm mb-3">Become a Partner</p>
-            <p className="text-gray-400 text-sm mb-3">Developers</p>
-          </ul>
           <ul>
             <h1 className="mb-1 font-semibold">Support</h1>
             <p className="text-gray-400 text-sm mb-3">About US</p>

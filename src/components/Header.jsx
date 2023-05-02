@@ -16,11 +16,11 @@ const Header = () => {
       <nav className="w-10/12 mx-auto flex flex-col lg:flex-row justify-between my-3 items-center">
         <div className="logo mb-3 lg:mb-0">
           <Link to="/">
-            <div className="pageTitle flex items-end">
-              <h3 className="text-2xl font-extrabold text-amber-700">
+            <div className="pageTitle flex items-center font-akaya items-end">
+              <h3 className="text-3xl font-extrabold text-amber-700">
                 SULTANs
               </h3>
-              <span className="ms-1 font-bold">recipe</span>
+              <span className="ms-1 font-bold text-lg mt-2">recipe</span>
             </div>
           </Link>
         </div>
@@ -39,11 +39,21 @@ const Header = () => {
                 data-tip={user.displayName}
               >
                 <button className="flex items-center">
-                  <img className="w-10 rounded-full mx-2" src={user.photoURL} />
+                  {user.photoURL ? (
+                    <img
+                      className="w-10 rounded-full mx-2"
+                      src={user.photoURL}
+                    />
+                  ) : (
+                    <img
+                      className="w-10 rounded-full mx-2"
+                      src="https://i.ibb.co/JHVvZ07/am-a-19-year-old-multimedia-artist-student-from-manila-21.png"
+                    />
+                  )}
                 </button>
               </div>
               <button
-                className="px-5 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l"
+                className="px-5 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l"
                 onClick={handleLogOut}
               >
                 Log Out
@@ -51,7 +61,7 @@ const Header = () => {
             </div>
           ) : (
             <span>
-              <button className="px-5 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
+              <button className="px-5 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
                 <Link to="/login">Log in</Link>
               </button>
             </span>

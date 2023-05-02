@@ -8,8 +8,8 @@ const Contact = () => {
           <div className="card-body">
             <h1 className="text-base md:text-lg items-center flex justify-center font-semibold mb-5">
               contact with
-              <span className="text-3xl md:text-5xl text-amber-500 font-akaya ms-2">
-                SULTANs recipe
+              <span className="text-3xl md:text-5xl text-amber-600 font-akaya ms-2">
+                SULTAN's
               </span>
             </h1>
             <div className="form-control">
@@ -30,14 +30,12 @@ const Contact = () => {
                 rows="4"
                 type="text"
                 placeholder="message"
-                className="border-solid border-2 rounded-lg p-4 input-bordered"
+                className="textarea textarea-bordered"
               ></textarea>
             </div>
-            <div className="form-control mt-6">
-              <button className="px-5 py-2 w-auto font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
-                Submit
-              </button>
-            </div>
+            <button className="px-5 py-2 w-36 mx-auto mt-4 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
+              Submit
+            </button>
           </div>
         </div>
       </div>

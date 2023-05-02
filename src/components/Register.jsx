@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
 import { Link } from "react-router-dom";
-// import { getAuth, updateProfile } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { user, createUser } = useContext(Authcontect);
+  const { createUser } = useContext(Authcontect);
   const [errormgs, setErrormgs] = useState("");
   // console.log(createUser);
+  const auth = getAuth();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -19,27 +20,24 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {})
+          .catch((error) => {
+            console.log(error);
+          });
         console.log(loggedUser);
         form.reset();
       })
       .catch((error) => {
         setErrormgs(error.message);
       });
-    /////////////////////////////////////////////////////////
-    // const auth = getAuth();
-    // updateProfile(auth.currentUser, {
-    //   displayName: { name },
-    //   photoURL: photo,
-    // })
-    //   .then(() => {})
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    ////////////////////////////////////////////////////////
   };
   return (
     <div>
-      <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover">
+      <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover bg-fixed">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <p className="text-stone-300">Welcome to our page</p>
@@ -58,13 +56,6 @@ const Register = () => {
                   required
                 />
                 <input
-                  type="text"
-                  name="photo"
-                  placeholder="Photo URL"
-                  className="input input-bordered mb-2"
-                  required
-                />
-                <input
                   type="email"
                   name="email"
                   placeholder="email"
@@ -77,7 +68,14 @@ const Register = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered mb-2"
+                  required
+                />
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Photo URL"
+                  className="input input-bordered "
                   required
                 />
               </div>
@@ -97,7 +95,7 @@ const Register = () => {
                   className=" text-lg font-semibold text-blue-700"
                 >
                   login
-                </Link>{" "}
+                </Link>
               </p>
             </form>
           </div>
