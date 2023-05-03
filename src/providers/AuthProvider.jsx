@@ -26,21 +26,10 @@ const AuthProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => setData(data.people));
   }, []);
-  console.log(data);
+  // console.log(data);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
-  };
-
-  const profileUpdate = () => {
-    updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo,
-    })
-      .then(() => {})
-      .catch((error) => {
-        console.log(error);
-      });
   };
 
   const signIn = (email, password) => {

@@ -18,24 +18,28 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     // console.log(name, photo, email, password);
-    createUser(email, password)
-      .then((result) => {
-        const loggedUser = result.user;
-        updateProfile(auth.currentUser, {
-          displayName: name,
-          photoURL: photo,
+    if ((email, password)) {
+      createUser(email, password)
+        .then((result) => {
+          const loggedUser = result.user;
+          updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo,
+          })
+            .then(() => {})
+            .catch((error) => {
+              console.log(error);
+            });
+          console.log(loggedUser);
+          form.reset();
         })
-          .then(() => {})
-          .catch((error) => {
-            console.log(error);
-          });
-        console.log(loggedUser);
-        form.reset();
-      })
-      .catch((error) => {
-        let errrormessage = error.code.split("auth/")[1];
-        setErrormgs(errrormessage);
-      });
+        .catch((error) => {
+          let errrormessage = error.code.split("auth/")[1];
+          setErrormgs(errrormessage);
+        });
+    } else {
+      setErrormgs("Email or Passwords cannot be empty");
+    }
   };
   return (
     <div>
@@ -62,7 +66,6 @@ const Register = () => {
                   name="email"
                   placeholder="email"
                   className="input input-bordered"
-                  required
                 />
               </div>
               <div className="form-control">
@@ -71,7 +74,6 @@ const Register = () => {
                   name="password"
                   placeholder="password"
                   className="input input-bordered mb-2"
-                  required
                 />
                 <input
                   type="text"
