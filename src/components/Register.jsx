@@ -11,12 +11,13 @@ const Register = () => {
 
   const handleRegister = (event) => {
     event.preventDefault();
+    setErrormgs("");
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photo, email, password);
+    // console.log(name, photo, email, password);
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
@@ -32,7 +33,8 @@ const Register = () => {
         form.reset();
       })
       .catch((error) => {
-        setErrormgs(error.message);
+        let errrormessage = error.code.split("auth/")[1];
+        setErrormgs(errrormessage);
       });
   };
   return (

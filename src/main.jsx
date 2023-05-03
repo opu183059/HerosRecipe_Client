@@ -7,9 +7,9 @@ import Home from "./components/Home.jsx";
 import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
 import AuthProvider from "./providers/AuthProvider";
-import Order from "./components/Order";
 import PrivateRoute from "./routes/PrivateRoute";
 import Erroorpage from "./components/Erroorpage";
+import Recipe from "./components/Recipe";
 
 const router = createBrowserRouter([
   {
@@ -30,10 +30,10 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/order",
+        path: "/recipe/:id",
         element: (
           <PrivateRoute>
-            <Order></Order>
+            <Recipe></Recipe>
           </PrivateRoute>
         ),
       },

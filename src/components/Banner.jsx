@@ -6,8 +6,8 @@ const Banner = () => {
       <div className="hero-content text-center">
         <div className=" max-w-screen-lg">
           <h1 className="text-2xl  text-stone-400 font-akaya">welcome to</h1>
-          <h1 className=" text-7xl text-amber-500 font-akaya drop-shadow-[0_35px_35px_rgba(255, 255, 255)]">
-            SULTANs recipe
+          <h1 className="text-7xl text-amber-500 font-akaya drop-shadow-[0_35px_35px_rgba(255, 255, 255)]">
+            HEROs recipe
           </h1>
           <p className="py-6 text-stone-400">
             your go-to source for delicious and easy-to-follow recipes! Our

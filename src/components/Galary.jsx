@@ -6,7 +6,7 @@ const Galary = () => {
       <h1 className="text-base md:text-lg items-center flex justify-center font-semibold mb-5">
         special from
         <span className="text-3xl md:text-5xl text-amber-600 font-akaya ms-2">
-          SULTANs recipe
+          HEROs recipe
         </span>
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

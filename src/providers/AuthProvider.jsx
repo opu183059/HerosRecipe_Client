@@ -20,6 +20,13 @@ const githubAuthProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("https://project-1-server-opu183059.vercel.app/allData")
+      .then((res) => res.json())
+      .then((data) => setData(data.people));
+  }, []);
+  console.log(data);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -64,6 +71,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const authInfo = {
+    data,
     user,
     createUser,
     signIn,

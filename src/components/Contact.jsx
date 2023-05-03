@@ -2,14 +2,14 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="bg-[url('https://media.cnn.com/api/v1/images/stellar/prod/130614114257-malaysia-food.jpg?q=x_0,y_0,h_675,w_1200,c_crop/h_720,w_1280')] bg-cover bg-fixed bg-blend-darken">
+    <div className="bg-[url('https://i.ibb.co/Bf6LQFh/130614114257-malaysia-food.jpg')] bg-cover bg-fixed ">
       <div className="min-h-screen flex items-center justify-center">
         <div className="card w-10/12 md:w-6/12 shadow-2xl bg-base-100">
           <div className="card-body">
             <h1 className="text-base md:text-lg items-center flex justify-center font-semibold mb-5">
               contact with
               <span className="text-3xl md:text-5xl text-amber-600 font-akaya ms-2">
-                SULTAN's
+                HERO's
               </span>
             </h1>
             <div className="form-control">

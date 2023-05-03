@@ -13,13 +13,11 @@ const Header = () => {
   };
   return (
     <div>
-      <nav className="w-10/12 mx-auto flex flex-col lg:flex-row justify-between my-3 items-center">
+      <nav className="px-28 flex flex-col lg:flex-row justify-between py-3 items-center bg-base-100">
         <div className="logo mb-3 lg:mb-0">
           <Link to="/">
             <div className="pageTitle flex items-center font-akaya items-end">
-              <h3 className="text-3xl font-extrabold text-amber-700">
-                SULTANs
-              </h3>
+              <h3 className="text-3xl font-extrabold text-amber-700">HEROs</h3>
               <span className="ms-1 font-bold text-lg mt-2">recipe</span>
             </div>
           </Link>
@@ -33,7 +31,6 @@ const Header = () => {
           </Link>
           {user ? (
             <div className="flex flex-col md:text-center md:flex-row items-center">
-              {/* <span className="mx-2">{user.email}</span> */}
               <div
                 className="tooltip tooltip-bottom"
                 data-tip={user.displayName}
@@ -53,7 +50,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="px-5 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l"
+                className=" w-24 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l"
                 onClick={handleLogOut}
               >
                 Log Out
@@ -61,7 +58,7 @@ const Header = () => {
             </div>
           ) : (
             <span>
-              <button className="px-5 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
+              <button className="w-24 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
                 <Link to="/login">Log in</Link>
               </button>
             </span>

@@ -16,7 +16,7 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               At{" "}
               <span className="text-amber-600 font-akaya text-base">
-                SULTANs recipe
+                HEROs recipe
               </span>
               , we're passionate about good food and great cooking. Whether
               you're a seasoned chef or a kitchen newbie, we've got something
@@ -41,9 +41,9 @@ const Footer = () => {
             </p>
           </ul>
         </div>
-        <div className="divider w-10/12 mx-auto h-1 bg-amber-700"></div>
+        <div className="divider w-10/12 mx-auto h-0.5 bg-amber-700"></div>
         <div className="w-10/12 mx-auto flex flex-row justify-center pt-2 text-gray-400 text-sm pb-12">
-          <span>@2023 SULTANs recipe - All Rights Reserved</span>
+          <span>© 2023 HEROs recipe - All Rights Reserved</span>
         </div>
       </footer>
     </div>
