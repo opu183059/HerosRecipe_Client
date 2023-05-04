@@ -13,7 +13,7 @@ const Header = () => {
   };
   return (
     <div>
-      <nav className="px-28 flex flex-col lg:flex-row justify-between py-3 items-center bg-base-100">
+      <nav className="px-24 flex flex-col lg:flex-row justify-between py-3 items-center bg-base-100">
         <div className="logo mb-3 lg:mb-0">
           <Link to="/">
             <div className="pageTitle flex items-center font-akaya items-end">
@@ -26,7 +26,7 @@ const Header = () => {
           <Link to="/" className="mx-2 md:justify-center">
             Home
           </Link>
-          <Link to="blogs" className="mx-2">
+          <Link to="/blog" className="mx-2">
             Blogs
           </Link>
           {user ? (
@@ -37,10 +37,11 @@ const Header = () => {
               >
                 <button className="flex items-center">
                   {user.photoURL ? (
-                    <img
-                      className="w-10 rounded-full mx-2"
-                      src={user.photoURL}
-                    />
+                    <div className="avatar">
+                      <div className="w-10 rounded-full">
+                        <img src={user.photoURL} />
+                      </div>
+                    </div>
                   ) : (
                     <img
                       className="w-10 rounded-full mx-2"

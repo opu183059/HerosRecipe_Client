@@ -1,17 +1,20 @@
 import React, { useContext, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth, updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(Authcontect);
+  const { createUser, logOut } = useContext(Authcontect);
   const [errormgs, setErrormgs] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   // console.log(createUser);
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const handleRegister = (event) => {
     event.preventDefault();
     setErrormgs("");
+    setSuccessMessage("");
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
@@ -22,6 +25,7 @@ const Register = () => {
       createUser(email, password)
         .then((result) => {
           const loggedUser = result.user;
+          setSuccessMessage("Account created successfully goto Login");
           updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo,
@@ -32,6 +36,11 @@ const Register = () => {
             });
           console.log(loggedUser);
           form.reset();
+          logOut()
+            .then(() => {})
+            .catch((error) => {
+              console.log(error);
+            });
         })
         .catch((error) => {
           let errrormessage = error.code.split("auth/")[1];
@@ -85,6 +94,7 @@ const Register = () => {
               </div>
               <div className="errorMessage">
                 <p className="text-red-500">{errormgs}</p>
+                <p className="text-green-700">{successMessage}</p>
               </div>
 
               <div className="form-control mt-4">

@@ -27,9 +27,30 @@ const Todayevent = () => {
               HERO's recepie
             </span>
           </p>
-          <button className="px-10 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l">
+          <label
+            htmlFor="my-modal"
+            className="btn px-10 ms-2 py-2 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-r from-amber-600 to-amber-500 hover:bg-gradient-to-l"
+          >
             Register
-          </button>
+          </label>
+          <div>
+            <input type="checkbox" id="my-modal" className="modal-toggle" />
+            <div className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Registration</h3>
+                <p className="py-4">
+                  Please Contact with this <br /> email id :
+                  herosrecipe@gmail.com <br />
+                  mobile: +445 2252 12
+                </p>
+                <div className="modal-action">
+                  <label htmlFor="my-modal" className="btn">
+                    OK
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
