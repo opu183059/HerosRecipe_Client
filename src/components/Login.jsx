@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const from = location.state?.from?.pathname || "/";
-  console.log(from);
+  // console.log(from);
   const [errorMgs, setErrorMgs] = useState("");
-  const { signIn, signGoogle, signGithub } = useContext(Authcontect);
+  const { signIn, signGoogle, signGithub, user } = useContext(Authcontect);
   // console.log(user);
 
   const handleLogin = (event) => {
@@ -24,7 +24,7 @@ const Login = () => {
         const loggedInUser = result.user;
         // console.log(loggedInUser);
         form.reset();
-        navigate(from);
+        // navigate(from);
         // console.log(from);
         // navigate("/");
       })
@@ -40,7 +40,7 @@ const Login = () => {
       .then((result) => {
         const loggeduser = result.user;
         // console.log(loggeduser);
-        navigate("/");
+        // navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -51,12 +51,18 @@ const Login = () => {
       .then((result) => {
         const loggeduser = result.user;
         // console.log(loggeduser);
-        navigate("/");
+        // navigate("/");
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate(from);
+    }
+  }, [user]);
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Authcontect } from "../providers/AuthProvider";
 
 const Header = () => {
@@ -22,13 +22,38 @@ const Header = () => {
             </div>
           </Link>
         </div>
+        {/* mx-2 md:justify-center */}
         <div className="menu mb-3 lg:mb-0 font-bold flex flex-col md:text-center md:flex-row items-center">
-          <Link to="/" className="mx-2 md:justify-center">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "mx-2 md:justify-center text-amber-700"
+                : "mx-2 md:justify-center"
+            }
+          >
             Home
-          </Link>
-          <Link to="/blog" className="mx-2">
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              isActive ? "mx-2 text-amber-700" : "mx-2 "
+            }
+          >
             Blogs
-          </Link>
+          </NavLink>
+          {user ? (
+            ""
+          ) : (
+            <NavLink
+              to="/register"
+              className={({ isActive }) =>
+                isActive ? "mx-2 text-amber-700" : "mx-2 "
+              }
+            >
+              Register
+            </NavLink>
+          )}
           {user ? (
             <div className="flex flex-col md:text-center md:flex-row items-center">
               <div

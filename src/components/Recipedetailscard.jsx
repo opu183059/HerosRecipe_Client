@@ -60,7 +60,7 @@ const Recipedetailscard = (props) => {
                     </svg>
                   }
                 ></Rating>{" "}
-                {recipeDetails.dish_rating} of 5
+                {recipeDetails.dish_rating} out of 5
               </p>
               <img
                 className="rounded-xl"
