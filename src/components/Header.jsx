@@ -16,7 +16,7 @@ const Header = () => {
       <nav className="px-24 flex flex-col lg:flex-row justify-between py-3 items-center bg-base-100">
         <div className="logo mb-3 lg:mb-0">
           <Link to="/">
-            <div className="pageTitle flex items-center font-akaya items-end">
+            <div className="pageTitle flex items-center font-akaya">
               <h3 className="text-3xl font-extrabold text-amber-700">HEROs</h3>
               <span className="ms-1 font-bold text-lg mt-2">recipe</span>
             </div>

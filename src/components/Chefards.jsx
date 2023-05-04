@@ -1,6 +1,8 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Chefards = (props) => {
   //   const cardData = props;
@@ -10,7 +12,7 @@ const Chefards = (props) => {
       <div className="shadow-card p-4 text-center flex flex-col transition duration-200 rounded-xl shadow-md hover:backdrop-blur-sm border-1 ring-0 ring-amber-500 border-amber-600 hover:shadow-xl hover:-mt-2">
         <div className="avatar">
           <div className="w-48 mx-auto">
-            <img
+            <LazyLoadImage
               className="max-w-48 rounded-xl border-2 ring-3 ring-amber-900 ring-offset-1 ring-offset-amber-800"
               src={props.cdata.profile_picture}
               alt="chef image"

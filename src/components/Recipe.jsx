@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { Authcontect } from "../providers/AuthProvider";
 import Recipedetailscard from "./Recipedetailscard";
 import Rating from "react-rating";
+import { ToastContainer } from "react-toastify";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Recipe = () => {
   const { id } = useParams();
@@ -19,9 +22,10 @@ const Recipe = () => {
         {/* banner section  */}
         <div className="hero min-h-full bg-base-100 my-1 md:my-20 px-0 md:px-24">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <img
+            <LazyLoadImage
               src={recipe?.profile_picture}
               className=" max-w-xs md:max-w-sm rounded-lg shadow-2xl"
+              effect="blur"
             />
             <div className=" text-center md:text-left ">
               <h1 className="text-amber-700 text-4xl md:text-5xl lg:text-7xl font-akaya font-bold">
@@ -152,6 +156,7 @@ const Recipe = () => {
           ></Recipedetailscard>
         ))}
       </div>
+      <ToastContainer />
     </div>
   );
 };

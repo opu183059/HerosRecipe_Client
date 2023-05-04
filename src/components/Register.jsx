@@ -21,6 +21,10 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     // console.log(name, photo, email, password);
+    if (password.length < 6) {
+      setErrormgs("Password must be at least 6 characters");
+      return;
+    }
     if ((email, password)) {
       createUser(email, password)
         .then((result) => {
@@ -45,6 +49,7 @@ const Register = () => {
         .catch((error) => {
           let errrormessage = error.code.split("auth/")[1];
           setErrormgs(errrormessage);
+          console.log(error);
         });
     } else {
       setErrormgs("Email or Passwords cannot be empty");
