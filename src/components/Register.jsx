@@ -1,15 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getAuth, updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser, logOut } = useContext(Authcontect);
+  const { createUser, logOut, user } = useContext(Authcontect);
   const [errormgs, setErrormgs] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [havemgs, setHavemgs] = useState("Already have an account?");
   // console.log(createUser);
   const auth = getAuth();
-  const navigate = useNavigate();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -21,6 +21,19 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     // console.log(name, photo, email, password);
+
+    if (!name) {
+      setErrormgs("Name field cannot be empty");
+      return;
+    }
+    if (!email) {
+      setErrormgs("Email field cannot be empty");
+      return;
+    }
+    if (!password) {
+      setErrormgs("Password field cannot be empty");
+      return;
+    }
     if (password.length < 6) {
       setErrormgs("Password must be at least 6 characters");
       return;
@@ -30,6 +43,7 @@ const Register = () => {
         .then((result) => {
           const loggedUser = result.user;
           setSuccessMessage("Account created successfully goto Login");
+          setHavemgs("Click here to");
           updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo,
@@ -51,8 +65,6 @@ const Register = () => {
           setErrormgs(errrormessage);
           console.log(error);
         });
-    } else {
-      setErrormgs("Email or Passwords cannot be empty");
     }
   };
   return (
@@ -94,28 +106,40 @@ const Register = () => {
                   name="photo"
                   placeholder="Photo URL"
                   className="input input-bordered "
-                  required
                 />
               </div>
               <div className="errorMessage">
-                <p className="text-red-500">{errormgs}</p>
-                <p className="text-green-700">{successMessage}</p>
+                <p className="text-red-500 text-center">{errormgs}</p>
+                <p className="text-green-700 text-center">{successMessage}</p>
               </div>
-
+              <div>
+                {user ? (
+                  <p className="text-center">
+                    {havemgs}{" "}
+                    <Link
+                      to="/login"
+                      className=" text-lg font-semibold text-blue-700"
+                    >
+                      login
+                    </Link>{" "}
+                  </p>
+                ) : (
+                  <p className="text-center">
+                    {havemgs}{" "}
+                    <Link
+                      to="/login"
+                      className=" text-lg font-semibold text-blue-700"
+                    >
+                      login
+                    </Link>
+                  </p>
+                )}
+              </div>
               <div className="form-control mt-4">
                 <button className="px-6 py-3 font-medium text-white transition duration-200 rounded-md shadow-md bg-gradient-to-l from-amber-600 to-amber-500 hover:bg-gradient-to-r">
                   Register
                 </button>
               </div>
-              <p>
-                Already have an account?{" "}
-                <Link
-                  to="/login"
-                  className=" text-lg font-semibold text-blue-700"
-                >
-                  login
-                </Link>
-              </p>
             </form>
           </div>
         </div>
