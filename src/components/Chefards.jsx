@@ -37,7 +37,7 @@ const Chefards = (props) => {
           </p>
           <p className="mb-3">
             Likes:
-            <span className="ms-1 font-bold">{props.cdata.likes}</span>
+            <span className="ms-1 font-bold">{props.cdata.likes}k</span>
           </p>
           <p>
             Ratings:

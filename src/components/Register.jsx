@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Authcontect } from "../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import { getAuth, updateProfile } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const { createUser, logOut, user } = useContext(Authcontect);
@@ -34,6 +36,10 @@ const Register = () => {
       setErrormgs("Password field cannot be empty");
       return;
     }
+    if (!photo) {
+      setErrormgs("Photo field cannot be empty");
+      return;
+    }
     if (password.length < 6) {
       setErrormgs("Password must be at least 6 characters");
       return;
@@ -59,6 +65,19 @@ const Register = () => {
             .catch((error) => {
               console.log(error);
             });
+          toast.success(
+            "️Congratulations, registration successful. Wellcome to HERO's recipe. To use our services go to login",
+            {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            }
+          );
         })
         .catch((error) => {
           let errrormessage = error.code.split("auth/")[1];
@@ -144,6 +163,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

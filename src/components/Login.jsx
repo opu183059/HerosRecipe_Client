@@ -109,10 +109,10 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-3">
-                <div className="socialLogin mb-2 flex justify-between">
+                <div className="socialLogin mb-2 flex flex-col md:flex-row justify-between ">
                   <button
                     onClick={handleGoogleLogin}
-                    className="btn bg-white text-black hover:text-white hover:bg-sky-600 rounded-md shadow-md w-auto border-sky-600 hover:border-sky-600"
+                    className="btn bg-white text-black hover:text-white hover:bg-sky-600 rounded-md shadow-md w-auto border-sky-600 hover:border-sky-600 mb-2 md:mb-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
