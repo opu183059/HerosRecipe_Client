@@ -9,7 +9,7 @@ const Chefards = (props) => {
   //   console.log(cardData);
   return (
     <div>
-      <div className="shadow-card p-4 text-center flex flex-col transition duration-200 rounded-xl shadow-md hover:backdrop-blur-sm border-1 ring-0 ring-amber-500 border-amber-600 hover:shadow-xl hover:-mt-2">
+      <div className="shadow-card p-4 text-center flex flex-col transition duration-200 rounded-xl shadow-md hover:backdrop-blur-sm border-1 ring-0 ring-amber-500 border-amber-600 hover:shadow-xl ">
         <div className="avatar">
           <div className="w-48 mx-auto">
             <LazyLoadImage

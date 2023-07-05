@@ -34,6 +34,9 @@ const Login = () => {
         setErrorMgs(errrormessage);
       });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleGoogleLogin = () => {
     signGoogle()

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getAuth, updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 const Register = () => {
   const { createUser, logOut, user } = useContext(Authcontect);
@@ -86,6 +87,9 @@ const Register = () => {
         });
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="hero min-h-screen bg-[url('https://i.ibb.co/2YHpXtD/slider-2.jpg')] bg-cover bg-fixed">
