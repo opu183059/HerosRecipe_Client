@@ -7,6 +7,7 @@ import Chef from "./Chef";
 import Todayevent from "./Todayevent";
 import About from "./About";
 import Todayspick from "./Todayspick";
+import CEOSection from "./CEOSection";
 
 const Home = () => {
   const { user } = useContext(Authcontect);
@@ -19,6 +20,7 @@ const Home = () => {
       <Todayevent></Todayevent>
       <Galary></Galary>
       <Contact></Contact>
+      <CEOSection></CEOSection>
     </div>
   );
 };

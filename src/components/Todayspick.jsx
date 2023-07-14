@@ -11,8 +11,8 @@ const Todayspick = () => {
           Recipe
         </span>
       </h1>
-      <div className="flex justify-between gap-5 items-center">
-        <div className="left w-1/2 flex justify-center relative">
+      <div className="lg:flex justify-between gap-5 items-center">
+        <div className="left lg:w-1/2 flex justify-center relative">
           <div className="w-7/12 ">
             <img
               className="h-auto max-w-full rounded-lg shadow-md border-[4px] border-white"
@@ -28,9 +28,9 @@ const Todayspick = () => {
             />
           </div>
         </div>
-        <div className="right w-1/2 flex justify-start">
+        <div className="right lg:w-1/2 flex justify-start">
           <div>
-            <h2 className="card-title text-lg md:text-xl font-bold mb-2">
+            <h2 className="card-title lg:mt-0 mt-10 text-lg md:text-xl font-bold mb-2">
               Name:
               <span className="ms-1 text-amber-800">Spaghetti Carbonara</span>
             </h2>
